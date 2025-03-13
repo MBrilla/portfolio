@@ -76,14 +76,24 @@ function App() {
           {activeSection === 'about' && (
             <section className="section-fade">
               <div className="about-container">
-                <h2>About Me</h2>
+                <div className="about-header">
+                  <h2>About Me</h2>
+                  <div className="about-social-links">
+                    <a href="https://instagram.com/lebrilla_mj" target="_blank" rel="noopener noreferrer" className="social-link">
+                      <img src={instaLogo} alt="Instagram" className="social-icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/mj-lebrilla-b23413341" target="_blank" rel="noopener noreferrer" className="social-link">
+                      <img src={linkedinLogo} alt="LinkedIn" className="social-icon" />
+                    </a>
+                  </div>
+                </div>
                 <div className="about-content-wrapper">
                   <div className="about-image">
-                    <img src={lebronImage} alt="Profile" className="image-primary" style={{ width: '300px', height: 'auto' }} />
-                    <img src={lebronImage2} alt="Profile Hover" className="image-secondary" style={{ width: '300px', height: 'auto' }} />
+                    <img src={lebronImage} alt="Profile" className="image-primary" />
+                    <img src={lebronImage2} alt="Profile Hover" className="image-secondary" />
                   </div>
                   <div className="about-content">
-                    <p style={{ marginTop: '20px' }}>I'm a web developer.</p>
+                    <p>I'm a web developer.</p>
                   </div>
                 </div>
               </div>
