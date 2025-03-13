@@ -360,3 +360,50 @@ p {
 .about-image:hover .image-secondary {
   opacity: 1;
 }
+
+/* Add at the end of your CSS file */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    padding-top: 90px;
+  }
+
+  .navigation {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .about-content-wrapper {
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-container h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1.2rem;
+  }
+}
