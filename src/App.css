@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   background-image: url('/src/assets/layered-waves-haikei.svg');
+  background-color: #121212; /* Dark background color */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,7 +16,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -30,55 +31,24 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at top right,
-    rgba(255, 255, 255, 0.1) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .navigation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   width: 100%;
   height: 80px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(18, 18, 18, 0.8); /* Darker background for visibility */
   backdrop-filter: blur(10px);
-  position: fixed;
+  position: fixed; /* Keeps the navbar fixed at the top */
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9999; /* Ensures the navbar is above other elements */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  justify-content: space-between;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  min-height: calc(100vh - 80px);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  position: relative;
-  padding-top: 100px;
-  margin-top: 80px;
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  margin-top: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    margin-top: 60px;
-    min-height: calc(100vh - 60px);
-    padding-top: 80px;
-  }
 }
 
 .nav-links {
@@ -88,6 +58,7 @@ body {
   gap: 1.5rem;
   align-items: center;
   margin: 0 auto;
+  flex: 1;
 }
 
 .logo {
@@ -95,36 +66,8 @@ body {
   height: 40px;
   width: auto;
   z-index: 10000;
-}
-
-@media screen and (max-width: 768px) {
-  .navigation {
-    padding: 0.5rem 1rem;
-    height: 60px;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
-
-  .logo {
-    height: 30px;
-  }
-}
-
-.logo {
-  position: absolute;
+  transition: transform 0.3s ease;
   left: 2rem;
-  height: 40px;
-  width: auto;
-}
-
-.nav-links {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
 }
 
 .social-links {
@@ -148,16 +91,6 @@ body {
 .social-link {
   display: flex;
   align-items: center;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
 }
 
 .nav-btn {
@@ -193,57 +126,32 @@ body {
   background: #00ff88;
 }
 
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
 .content {
   background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 24px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;  /* Changed from 1rem */
+  margin: 0 auto;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   color: #fff;
-  overflow-y: auto;
-  max-height: calc(100vh - 140px);  /* Adjusted height */
+  overflow-y: hidden;
+  max-height: calc(100vh - 140px);
   transform-origin: center;
   perspective: 1000px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   position: relative;
-  padding-top: 90px;
-  padding-bottom: 0; /* Removed bottom padding */
+  z-index: 1;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 1rem;
-    padding-top: 80px;
-    padding-bottom: 0; /* Removed bottom padding */
-  }
-
-  .content {
-    width: 90%;
-    padding: 1.5rem;
-    margin: 0 auto;  /* Changed from 1rem */
-    max-height: calc(100vh - 80px); /* Adjusted for removed padding */
-  }
-}
 .content:hover {
   transform: translateY(-5px);
-  box-shadow: 
-    0 15px 45px rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .projects-grid {
@@ -269,54 +177,10 @@ body {
   justify-content: flex-start;
 }
 
-.content {
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-}
-
-.content::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #fff, #0095ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.project-card p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-@media screen and (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-}
-
 .project-card:hover {
   transform: translateY(-5px) scale(1.02);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
-}
-
-.contact-form {
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
 }
 
 .form-input {
@@ -362,23 +226,6 @@ h1, h2 {
   margin-bottom: 1.5rem;
 }
 
-.nav-btn::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #0095ff;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-btn.active::after {
-  width: 80%;
-  background: #0095ff;
-}
-
 h1 {
   font-size: 3.5rem;
   line-height: 1.2;
@@ -390,22 +237,18 @@ p {
   line-height: 1.8;
 }
 
-.nav-btn:active {
-  transform: scale(0.95);
-}
-
 .about-container {
   display: flex;
   gap: 0.5rem;
   align-items: flex-start;
   flex-direction: column;
-  margin-top: -1rem; /* Added negative margin to reduce space */
+  margin-top: -1rem;
 }
 
 .about-container h2 {
   font-size: 3rem;
   margin-bottom: 0.75rem;
-  margin-top: 0; /* Ensure no top margin on heading */
+  margin-top: 0;
 }
 
 .about-content-wrapper {
@@ -427,17 +270,6 @@ p {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.about-content p {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.about-container h2 {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
 }
 
 .about-content p {
@@ -487,87 +319,126 @@ p {
   gap: 1rem;
 }
 
-/* Remove social-links from navigation */
 .navigation .social-links {
   display: none;
 }
 
+/* Media Queries */
 @media screen and (max-width: 768px) {
+  body {
+    background-size: 100% auto; /* Cover width, auto height */
+    background-position: bottom center; /* Position at bottom */
+    background-attachment: fixed; /* Keep fixed */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+    padding: 1rem;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .navigation {
+    width: 100vw;
+    height: 60px;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .logo {
+    position: absolute;
+    left: 0.5rem;
+    height: 25px;
+    margin-right: 0.5rem;
+  }
+
+  .nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .content {
+    width: 90%;
+    max-width: 800px;
+    padding: 1.5rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
   .about-header {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
-  
+
   .about-social-links {
     align-self: flex-end;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 1rem;
-    padding-top: 90px;
-    padding-bottom: 80px;
-  }
-
-  .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    height: 60px;
-  }
-
-  .logo {
-    position: static;
-    height: 25px;
-    width: auto;
-    margin-right: 1rem;
-  }
-
-  .nav-links {
-    flex: 1;
-    justify-content: center;
-    gap: 0.75rem;
-  }
-
-  .nav-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 0.75rem;
-    margin-left: 1rem;
-  }
-
-  .social-icon {
-    height: 20px;
-    width: 20px;
-    display: block;
-  }
-
-  .content {
-    width: 90%;
-    padding: 1.5rem;
-    margin: 0 auto;  /* Changed from 1rem */
-    max-height: calc(100vh - 100px);
-  }
 
   .about-content-wrapper {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    overflow: hidden;
+  }
+
+  .about-content {
+    width: 90%;
+    padding: 0.5rem;
+    text-align: center;
+    overflow: hidden;
   }
 
   .about-image {
-    width: 250px;
-    height: auto;
+    width: 60%;
+    max-width: 150px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
 
   .about-image img {
@@ -575,89 +446,8 @@ p {
     height: auto;
     object-fit: cover;
   }
-
-  .about-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-social-links {
-    display: flex;
-    gap: 1rem;
-    margin-left: auto;
-  }
-
-  .social-icon {
-    height: 24px;
-    width: 24px;
-    display: block;
-  }
-
-  .about-content {
-    margin-top: 1rem;
-    text-align: center;
-    width: 100%;
-  }
 }
 
-h1 {
-  font-size: 2.5rem;
-}
-
-.about-container h2 {
-  font-size: 2rem;
-}
-
-.about-content p {
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.container {
-  padding: 1rem;
-  padding-top: 70px;
-}
-
-@media screen and (max-width: 768px) {
-  .contact-form {
-    width: 90%;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .form-group {
-    width: 100%;
-  }
-
-  .form-input {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  textarea.form-input {
-    min-height: 120px;
-  }
-
-  .submit-btn {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
-}
-
-/* Desktop media query */
 @media screen and (min-width: 1024px) {
   .container {
     max-width: 1200px;
@@ -679,59 +469,4 @@ h1 {
     height: 50px;
     padding: 1rem 2rem;
   }
-}
-
-/* Remove these duplicate container definitions */
-.container {
-  max-width: 1200px;
-  margin: 80px auto 0;
-  padding: 2rem;
-  min-height: calc(100vh - 80px);
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: relative;
-  padding-top: 100px;
-}
-
-/* Keep one content definition */
-.content {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 24px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  color: #fff;
-  overflow-y: auto;
-  max-height: calc(100vh - 160px);
-  transform-origin: center;
-  perspective: 1000px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Keep one logo definition */
-.logo {
-  position: relative;
-  height: 40px;
-  width: auto;
-  z-index: 10000;
-  transition: transform 0.3s ease;
-}
-
-/* Keep one nav-links definition */
-.nav-links {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  align-items: center;
-  margin: 0 auto;
-  flex: 1;
 }

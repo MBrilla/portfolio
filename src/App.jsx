@@ -47,14 +47,6 @@ function App() {
             Contact
           </button>
         </div>
-        <div className="social-links">
-          <a href="https://instagram.com/lebrilla_mj" target="_blank" rel="noopener noreferrer" className="social-link">
-            <img src={instaLogo} alt="Instagram" className="social-icon" />
-          </a>
-          <a href="https://www.linkedin.com/in/mj-lebrilla-b23413341" target="_blank" rel="noopener noreferrer" className="social-link">
-            <img src={linkedinLogo} alt="LinkedIn" className="social-icon" />
-          </a>
-        </div>
       </nav>
 
       <AnimatePresence mode="wait">
