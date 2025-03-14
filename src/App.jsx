@@ -56,7 +56,7 @@ function App() {
           animate="animate"
           exit="exit"
           variants={pageTransition}
-          className="content"
+          className="content mobile-adjusted"
         >
           {activeSection === 'home' && (
             <section className="section-fade">
@@ -97,12 +97,12 @@ function App() {
               <h2>My Projects</h2>
               <div className="projects-grid">
                 <div className="project-card">
-                  <h3>Project 1</h3>
-                  <p>A description of your first project</p>
+                  <h3>Music Portfolio Website</h3>
+                  <p>A Web portfolio that showcases my beats</p>
                 </div>
                 <div className="project-card">
-                  <h3>Project 2</h3>
-                  <p>A description of your second project</p>
+                  <h3>Task Organizer + File Organizer</h3>
+                  <p>A web app similar to notion but has JsZip to sort your files instantly.</p>
                 </div>
               </div>
             </section>

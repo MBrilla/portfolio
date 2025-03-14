@@ -187,16 +187,17 @@ body {
   width: 100%;
   padding: 1rem;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Consistent border */
   border-radius: 12px;
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .form-input:focus {
   outline: none;
-  border-color: #0066FF;
+  border-color: #0066FF; /* Highlight border on focus */
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -468,5 +469,21 @@ p {
   .navigation {
     height: 50px;
     padding: 1rem 2rem;
+  }
+}
+.mobile-adjusted {
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-adjusted {
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 }
